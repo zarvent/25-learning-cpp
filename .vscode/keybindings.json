@@ -1,0 +1,8 @@
+[
+  {
+    "key": "ctrl+/",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Build and Run C++",
+    "when": "editorTextFocus && resourceExtname == '.cpp'"
+  }
+]
