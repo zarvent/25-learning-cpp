@@ -7,8 +7,6 @@ Cada día que alquilas el coche cuesta 40 $. Si alquilas el coche durante 7 día
 
 Escribe un código que dé el importe total para diferentes días (d).
 */
-#include <iostream>
-using namespace std;
 
 int rental_car_cost(int days, int rental_price = 40){
     int total = days * rental_price;
