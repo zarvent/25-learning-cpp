@@ -1,32 +1,38 @@
 /*
-Estabas acampando con tus amigos lejos de casa, pero cuando llega el momento de volver, te das cuenta de que te estás quedando sin combustible y la gasolinera más cercana está a 50 millas de distancia. Sabes que, de media, tu coche consume unas 25 millas por galón. Te quedan 2 galones.
+Crea una función finalGrade que calcule la nota final de un estudiante en función de dos parámetros: la nota del examen y el número de proyectos completados.
 
-Teniendo en cuenta estos factores, escribe una función que te diga si es posible llegar a la gasolinera o no.
+Esta función debe tomar dos argumentos: exam: nota del examen (de 0 a 100); projects: número de proyectos completados (de 0 en adelante).
 
-La función debe devolver verdadero si es posible y falso si no lo es.
+Esta función debe devolver un número (nota final). Hay cuatro tipos de notas finales:
 
-----
-No teniea idea de que es uint32_t
-uint32_t = es un numero entero positivo o igual a 0 que puede ser muy grande
-u: unsigned (sin signo, o sea, no puede ser negativo)
-int: integer (entero)
-32: 32 bits (puede guardar números grandes)
-_t: type (tipo)
+100, si la nota del examen es superior a 90 o si el número de proyectos completados es superior a 10.
+90, si la nota del examen es superior a 75 y si el número de proyectos completados es mínimo de 5.
+75, si la nota del examen es superior a 50 y si el número de proyectos completados es mínimo de 2.
+0, en los demás casos
+Ejemplos (entradas --> salida):
 
-mpg --> millas por galon
+100, 12 --> 100
+99, 0 --> 100
+10, 15 --> 100
+
+85, 5 --> 90
+
+55, 3 --> 75
+
+55, 0 --> 0
+20, 2 --> 0
+
 */
 
-bool zero_fuel(uint32_t distance_to_pump, uint32_t mpg, uint32_t fuel_left){
-    return ((mpg * fuel_left) >= distance_to_pump);
-}
- /*
- Antigua Solucion:
- using namespace std;
-bool zero_fuel(uint32_t distance_to_pump, uint32_t mpg, uint32_t fuel_left){
-if((distance_to_pump >= 0) && (fuel_left >= 2) && (fuel_left >= 0) ){
-    bool zero_fuel = true;
-} else{
-    bool zero_fuel = false;
+int final_grade(int exam, int projects){
+    int nota_final = 0;
+    if(exam > 90 || projects > 10){
+        nota_final = 100;
+    } else if(exam > 75 && projects >= 5){
+        nota_final = 90;
+    } else if(exam > 50 && projects >= 2){
+        nota_final = 75;
+    }
+    return nota_final;
 }
 
- */
